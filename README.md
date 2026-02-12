@@ -5,13 +5,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>¿Quieres Ser Mi San Valentín, Paula? ❤️</title>
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Great+Vibes&display=swap" rel="stylesheet">
     <style>
         body {
-            font-family: 'Arial', sans-serif;
+            font-family: 'Dancing Script', cursive;
             margin: 0;
             padding: 0;
-            background: linear-gradient(135deg, #8b0000, #dc143c, #ffd700);
-            color: white;
+            background: linear-gradient(135deg, #ffe4e1, #ffb6c1, #ff69b4);
+            color: #8b0000;
             overflow-x: hidden;
             animation: fadeIn 2s ease-in;
         }
@@ -29,7 +30,7 @@
             text-align: center;
             position: relative;
         }
-        .hearts, .stars, .petals {
+        .roses {
             position: absolute;
             top: 0;
             left: 0;
@@ -38,143 +39,76 @@
             pointer-events: none;
             overflow: hidden;
         }
-        .heart {
+        .rose {
             position: absolute;
             color: #ff1493;
-            font-size: 2rem;
-            animation: float 6s linear infinite;
+            font-size: 2.5rem;
+            animation: floatRose 8s linear infinite;
         }
-        .star {
-            position: absolute;
-            color: #ffd700;
-            font-size: 1.5rem;
-            animation: twinkle 4s linear infinite;
-        }
-        .petal {
-            position: absolute;
-            color: #ff69b4;
-            font-size: 1.8rem;
-            animation: drift 8s linear infinite;
-        }
-        @keyframes float {
+        @keyframes floatRose {
             0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
             100% { transform: translateY(-100vh) rotate(360deg); opacity: 0; }
         }
-        @keyframes twinkle {
-            0%, 100% { opacity: 0; transform: scale(0.5); }
-            50% { opacity: 1; transform: scale(1); }
-        }
-        @keyframes drift {
-            0% { transform: translateY(100vh) rotate(0deg); opacity: 1; }
-            100% { transform: translateY(-100vh) rotate(45deg); opacity: 0; }
-        }
         h1, h2 {
-            font-size: 3rem;
+            font-family: 'Great Vibes', cursive;
+            font-size: 4rem;
             margin: 0;
-            text-shadow: 2px 2px 4px rgba(0,0,0,0.5);
+            text-shadow: 2px 2px 4px rgba(255,255,255,0.8);
+            color: #dc143c;
         }
         p {
-            font-size: 1.5rem;
-            max-width: 600px;
-            line-height: 1.6;
-        }
-        .timeline {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 20px;
-            max-width: 800px;
-        }
-        .timeline-item {
-            background: rgba(255,255,255,0.9);
+            font-size: 1.8rem;
+            max-width: 700px;
+            line-height: 1.8;
             color: #8b0000;
-            padding: 15px;
-            border-radius: 10px;
-            width: 80%;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            animation: slideIn 1s ease-out;
-        }
-        .reasons {
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-        }
-        .reasons ul {
-            list-style: none;
-            padding: 0;
-        }
-        .reasons li {
-            margin: 10px 0;
-            font-size: 1.2rem;
-            opacity: 0;
-            animation: reveal 2s ease-in-out forwards;
-        }
-        .reasons li:nth-child(1) { animation-delay: 0.5s; }
-        .reasons li:nth-child(2) { animation-delay: 1s; }
-        .reasons li:nth-child(3) { animation-delay: 1.5s; }
-        .reasons li:nth-child(4) { animation-delay: 2s; }
-        .reasons li:nth-child(5) { animation-delay: 2.5s; }
-        @keyframes reveal {
-            to { opacity: 1; transform: translateY(0); }
-            from { opacity: 0; transform: translateY(20px); }
-        }
-        .gallery {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 20px;
-            margin: 20px 0;
-        }
-        .gallery img {
-            width: 200px;
-            height: 200px;
-            object-fit: cover;
-            border-radius: 10px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-            transition: transform 0.3s;
-        }
-        .gallery img:hover {
-            transform: scale(1.1);
         }
         .letter {
-            background: rgba(255,255,255,0.9);
+            background: rgba(255,255,255,0.95);
             color: #8b0000;
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 700px;
-            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 800px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
             animation: slideIn 1s ease-out;
+            border: 2px solid #ff69b4;
+        }
+        @keyframes slideIn {
+            from { transform: translateY(50px); opacity: 0; }
+            to { transform: translateY(0); opacity: 1; }
         }
         .promises, .plans {
-            background: rgba(0,0,0,0.5);
-            padding: 20px;
-            border-radius: 10px;
-            max-width: 600px;
-            margin: 20px 0;
+            background: rgba(255,255,255,0.9);
+            padding: 30px;
+            border-radius: 20px;
+            max-width: 700px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            border: 2px solid #ffb6c1;
         }
         .promises ul, .plans ul {
             list-style: none;
             padding: 0;
         }
         .promises li, .plans li {
-            margin: 10px 0;
-            font-size: 1.2rem;
+            margin: 15px 0;
+            font-size: 1.5rem;
+            color: #dc143c;
         }
         button {
-            background: #ffd700;
-            color: #8b0000;
+            background: linear-gradient(45deg, #ff69b4, #ffb6c1);
+            color: white;
             border: none;
-            padding: 15px 30px;
-            font-size: 1.2rem;
+            padding: 20px 40px;
+            font-size: 1.5rem;
+            font-family: 'Dancing Script', cursive;
             border-radius: 50px;
             cursor: pointer;
-            transition: background 0.3s, transform 0.3s;
-            margin: 10px;
+            transition: transform 0.3s, box-shadow 0.3s;
+            margin: 15px;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.3);
         }
         button:hover {
-            background: #dc143c;
             transform: scale(1.1);
+            box-shadow: 0 8px 16px rgba(0,0,0,0.4);
         }
         .celebration {
             display: none;
@@ -183,7 +117,7 @@
             left: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0,0,0,0.8);
+            background: rgba(255,192,203,0.9);
             justify-content: center;
             align-items: center;
             z-index: 10;
@@ -195,167 +129,121 @@
             100% { opacity: 1; }
         }
         .celebration h1 {
-            font-size: 4rem;
-            color: #ffd700;
-        }
-        .scroll-hint {
-            position: absolute;
-            bottom: 20px;
-            font-size: 1rem;
-            animation: bounce 2s infinite;
+            font-size: 5rem;
+            color: #ff1493;
+            animation: bounce 1s infinite;
         }
         @keyframes bounce {
             0%, 20%, 50%, 80%, 100% { transform: translateY(0); }
             40% { transform: translateY(-10px); }
             60% { transform: translateY(-5px); }
         }
+        .scroll-hint {
+            position: absolute;
+            bottom: 20px;
+            font-size: 1.2rem;
+            animation: pulse 2s infinite;
+            color: #dc143c;
+        }
+        @keyframes pulse {
+            0%, 100% { opacity: 1; }
+            50% { opacity: 0.5; }
+        }
     </style>
 </head>
 <body>
-    <div class="hearts" id="hearts"></div>
-    <div class="stars" id="stars"></div>
-    <div class="petals" id="petals"></div>
+    <div class="roses" id="roses"></div>
 
-    <!-- Sección 1: Introducción -->
+    <!-- Sección 1: Introducción Romántica -->
     <div class="section" id="intro">
-        <h1>¡Hola, Paula! ❤️</h1>
-        <p>Maikel aquí, preparándote algo único. Baja para ver por qué eres el amor de mi vida y por qué este 14 de febrero será inolvidable.</p>
-        <div class="scroll-hint">↓ Desliza hacia abajo ↓</div>
+        <h1>¡Hola, Mi Amor Paula! 🌹❤️</h1>
+        <p>Maikel aquí, con el corazón latiendo fuerte. Prepárate para un viaje lleno de amor y risas. Baja y descubre por qué eres mi todo. 😘</p>
+        <div class="scroll-hint">↓ Sigue bajando, mi reina ↓</div>
     </div>
 
-    <!-- Sección 2: Nuestra Historia (Nueva) -->
-    <div class="section" id="history">
-        <h2>Nuestra Historia Juntos</h2>
-        <p>Un viaje lleno de momentos mágicos, Paula. Aquí algunos hitos que nos han traído hasta aquí.</p>
-        <div class="timeline">
-            <div class="timeline-item">
-                <strong>El Día que Nos Conocimos:</strong> [Fecha, ej. Hace un año] – Un encuentro que cambió todo.
-            </div>
-            <div class="timeline-item">
-                <strong>Nuestra Primera Cita:</strong> [Fecha] – Risas, miradas y el inicio de algo especial.
-            </div>
-            <div class="timeline-item">
-                <strong>El Momento en que Supe que Eras Tú:</strong> [Fecha] – Cuando me di cuenta de que eras mi todo.
-            </div>
-            <div class="timeline-item">
-                <strong>Nuestro Primer Viaje:</strong> [Fecha/Lugar] – Aventuras inolvidables juntos.
-            </div>
-            <div class="timeline-item">
-                <strong>Hoy:</strong> Preparándonos para un futuro brillante.
-            </div>
-            <!-- Edita con detalles reales -->
-        </div>
-    </div>
-
-    <!-- Sección 3: Razones por las que te Amo (Nueva) -->
-    <div class="section" id="reasons">
-        <h2>Razones por las que te Amo, Paula</h2>
-        <p>Cada día descubro algo nuevo. Aquí van solo algunas...</p>
-        <div class="reasons">
-            <ul>
-                <li>🌹 Tu sonrisa que ilumina mi mundo.</li>
-                <li>💕 Tu bondad y cómo me haces sentir amado.</li>
-                <li>🌟 Tu fuerza y cómo enfrentas todo con gracia.</li>
-                <li>❤️ La forma en que me entiendes como nadie más.</li>
-                <li>🎉 Y mil razones más que hacen que seas perfecta para mí.</li>
-            </ul>
-        </div>
-    </div>
-
-    <!-- Sección 4: Galería de Recuerdos -->
-    <div class="section" id="gallery">
-        <h2>Nuestros Recuerdos Más Dulces</h2>
-        <p>Cada momento contigo es mágico, Paula. Mira estos tesoros de nuestro amor.</p>
-        <div class="gallery">
-            <img src="https://via.placeholder.com/200x200/8b0000/ffffff?text=Nuestra+Primera+Cita" alt="Primera cita">
-            <img src="https://via.placeholder.com/200x200/dc143c/ffffff?text=Viaje+Juntos" alt="Viaje juntos">
-            <img src="https://via.placeholder.com/200x200/ffd700/ffffff?text=Risas+Compartidas" alt="Risas compartidas">
-            <!-- Reemplaza con tus fotos reales -->
-        </div>
-    </div>
-
-    <!-- Sección 5: Carta de Amor -->
+    <!-- Sección 2: Carta de Amor Larga y Linda -->
     <div class="section" id="letter">
-        <h2>Una Carta Solo Para Ti, Paula</h2>
+        <h2>Una Carta Solo para Ti, Paula 💌</h2>
         <div class="letter">
-            <p>Querida Paula,</p>
-            <p>Eres el amor de mi vida, mi razón de ser. Desde que te conocí, cada día es una aventura llena de felicidad. Tus ojos, tu sonrisa, tu forma de reír... todo en ti me hace sentir completo. Esto no va a ser lo único; apenas es el comienzo de nuestro San Valentín. Me siento muy afortunado de poder pasarlo juntos, creando recuerdos que durarán para siempre. Este 14 de febrero, espero que sea el mejor de nuestras vidas, un día que marque el inicio de muchos más juntos.</p>
-            <p>¿Quieres ser mi San Valentín, no solo hoy, sino para siempre? ❤️</p>
-            <p>Con todo mi corazón,<br>Maikel</p>
+            <p>Querida Paula, mi amor eterno,</p>
+            <p>Eres el sol que ilumina mis días, la risa que llena mi alma, y el abrazo que me hace sentir en casa. Desde el primer momento, supe que eras tú – mi compañera perfecta, mi aventura favorita. Tus ojos brillan como estrellas, y tu sonrisa... ¡ay, esa sonrisa me derrite! 😍</p>
+            <p>Esto no es solo una propuesta; es el comienzo de nuestro San Valentín más mágico. Me siento el hombre más afortunado del mundo por tenerte a mi lado. Imagina noches de risas, besos robados y sueños compartidos. Eres mi amor de verdad, y quiero que este 14 de febrero sea el mejor de nuestras vidas, lleno de sorpresas y ternura. ❤️</p>
+            <p>¿Quieres ser mi San Valentín, mi todo, mi siempre? ¡Di que sí y hagamos magia juntos! 🌟</p>
+            <p>Con todo mi corazón y un millón de besos,<br>Tu Maikel, que te ama locamente 💕</p>
         </div>
     </div>
 
-    <!-- Sección 6: Promesas Futuras -->
+    <!-- Sección 3: Promesas Divertidas y Románticas -->
     <div class="section" id="promises">
-        <h2>Promesas para Nuestro Futuro</h2>
-        <p>Paula, si dices que sí, te prometo:</p>
+        <h2>Promesas para Nuestro Amor Divertido 💑</h2>
+        <p>Paula, si dices que sí, te prometo risas y amor sin fin. ¡Vamos a ser imparables! 😉</p>
         <div class="promises">
             <ul>
-                <li>🌹 Más aventuras y viajes inolvidables juntos.</li>
-                <li>💑 Ser tu compañero en las buenas y en las malas, siempre.</li>
-                <li>❤️ Celebrar cada San Valentín como si fuera el primero.</li>
-                <li>🎁 Sorpresas diarias para recordarte cuánto te amo.</li>
-                <li>🌟 Hacer que cada día sea especial, como tú lo eres para mí.</li>
+                <li>🌹 Bailar contigo hasta que nos duelan los pies (y luego seguir bailando).</li>
+                <li>🍫 Compartir chocolates y besos dulces todos los días.</li>
+                <li>🎉 Sorpresas locas, como picnics sorpresa o viajes improvisados.</li>
+                <li>❤️ Ser tu compañero en todo: risas, lágrimas y aventuras épicas.</li>
+                <li>😘 Hacerte reír tanto que olvides el mundo entero.</li>
             </ul>
         </div>
     </div>
 
-    <!-- Sección 7: Planes para San Valentín (Nueva) -->
+    <!-- Sección 4: Planes Especiales para San Valentín -->
     <div class="section" id="plans">
-        <h2>Planes para Nuestro San Valentín</h2>
-        <p>Paula, imagina lo que viene. Esto es solo el inicio...</p>
+        <h2>Planes para Nuestro San Valentín Mágico 🎊</h2>
+        <p>Paula, imagina esto... ¡Será inolvidable! Esto es solo el inicio de nuestra historia de amor. 🌈</p>
         <div class="plans">
             <ul>
-                <li>🍽️ Una cena romántica bajo las estrellas.</li>
-                <li>💌 Más cartas y sorpresas que te harán sonreír.</li>
-                <li>❤️ Y el comienzo de una vida llena de amor eterno.</li>
+                <li>🍽️ Una cena romántica con velas y tu plato favorito (y yo cocinando... o pidiendo delivery 😉).</li>
+                <li>💌 Cartas escondidas por toda la casa con mensajes de amor.</li>
+                <li>🌟 Un paseo bajo las estrellas, contándonos secretos y riendo.</li>
+                <li>🎁 Regalos tontos y dulces que te hagan sonreír.</li>
+                <li>❤️ Y el comienzo de una vida llena de amor eterno, risas y felicidad.</li>
             </ul>
         </div>
     </div>
 
-    <!-- Sección 8: Propuesta Final -->
+    <!-- Sección 5: Propuesta Final Divertida -->
     <div class="section" id="proposal">
-        <h2>La Gran Pregunta</h2>
-        <p>¿Qué dices, Paula? Haz clic en tu respuesta.</p>
-        <button id="yesBtn">¡Sí, quiero ser tu San Valentín! ❤️</button>
-        <button id="noBtn">No... (pero por favor di que sí 😘)</button>
+        <h2>La Gran Pregunta, Mi Amor 💍</h2>
+        <p>Paula, ¿estás lista para ser mi San Valentín y mi todo? ¡Haz clic y hagamos historia! 😍</p>
+        <button id="yesBtn">¡Sí, quiero! ❤️ Te amo</button>
+        <button id="noBtn">No... (pero ¡por favor di que sí! 😘)</button>
     </div>
 
-    <!-- Celebración Oculta -->
+    <!-- Celebración Divertida -->
     <div class="celebration" id="celebration">
         <div>
-            <h1>¡Felicidades, Paula! ❤️🎉</h1>
-            <p>Eres mi San Valentín perfecta, el amor de mi vida. Esto es solo el comienzo; me siento muy afortunado de poder pasarlo juntos. ¡Te amo más que a nada!</p>
-            <button onclick="location.reload()">Volver al Inicio</button>
+            <h1>¡Felicidades, Paula! 🎉❤️</h1>
+            <p>Eres mi San Valentín perfecta, mi amor de la vida. Esto es solo el comienzo – me siento afortunado de pasarlo juntos. ¡Te amo más que a las rosas y las estrellas! 🌹⭐</p>
+            <button onclick="location.reload()">Volver y releer todo 💕</button>
         </div>
     </div>
 
     <script>
-        // Generar corazones, estrellas y pétalos flotantes
-        function createElements(containerId, elementClass, symbol, count) {
-            const container = document.getElementById(containerId);
-            for (let i = 0; i < count; i++) {
-                const element = document.createElement('div');
-                element.className = elementClass;
-                element.innerHTML = symbol;
-                element.style.left = Math.random() * 100 + '%';
-                element.style.animationDelay = Math.random() * 6 + 's';
-                container.appendChild(element);
+        // Generar rosas flotantes
+        function createRoses() {
+            const rosesContainer = document.getElementById('roses');
+            for (let i = 0; i < 25; i++) {
+                const rose = document.createElement('div');
+                rose.className = 'rose';
+                rose.innerHTML = '🌹';
+                rose.style.left = Math.random() * 100 + '%';
+                rose.style.animationDelay = Math.random() * 8 + 's';
+                rosesContainer.appendChild(rose);
             }
         }
-        createElements('hearts', 'heart', '❤️', 20);
-        createElements('stars', 'star', '⭐', 15);
-        createElements('petals', 'petal', '🌹', 10);
+        createRoses();
 
         // Lógica de botones
         document.getElementById('yesBtn').addEventListener('click', () => {
             document.getElementById('celebration').style.display = 'flex';
         });
         document.getElementById('noBtn').addEventListener('click', () => {
-            alert('¡Por favor, reconsidera, Paula! ❤️ Eres mi todo.');
+            alert('¡Por favor, reconsidera, Paula! ❤️ Eres mi todo y mi diversión favorita.');
         });
 
-        // Música opcional (descomenta y agrega un archivo MP3)
+        // Música opcional (descomenta y agrega un archivo MP3 romántico/divertido)
         // const audio = new Audio('tu-cancion-romantica.mp3');
         // audio.play();
     </script>
